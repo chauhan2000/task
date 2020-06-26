@@ -18,6 +18,7 @@ System.out.println("Please verify your aadhar");
 public static void main(String args[])
 
 {
+  System.out.println("Running in main function");
 ifelse obj = new ifelse();
 obj.func();
 }
