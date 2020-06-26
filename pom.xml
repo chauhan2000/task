@@ -18,6 +18,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
+		    <!-- Comment -->
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url> http://localhost:9000 </sonar.host.url>
                  <maven.compiler.source>1.8</maven.compiler.source>
