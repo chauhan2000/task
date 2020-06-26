@@ -8,7 +8,6 @@ if (age >= 18)
 {
 System.out.println("You are welcome");
   System.out.println("Verifying Your age");
-  System.out.println("Changes made in the program");
 }
 else if(age<18)
 {
