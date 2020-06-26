@@ -1,33 +1,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>hello</groupId>
-  <artifactId>upes</artifactId>
+  <groupId>meet</groupId>
+  <artifactId>meet</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-  <dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>5.1</version>
-    <scope>test</scope>
-</dependency>  
-</dependencies>  
-<repositories>
-	<repository>
-	<id>upes</id>
-	<name>Releases</name>
-	<url>http://localhost:8082/repository/sample-rel/</url>
-	</repository>
-</repositories>
-<distributionManagement>
-  <repository>
-    <id>releases</id>
+  <packaging>war</packaging>
+
+<!-- -->
+  <distributionManagement>
+	  <repository>
+    <id>sample-rel</id>
     <name>releases</name>
     <url>http://localhost:8082/repository/sample-rel/</url>
   </repository>
-  <snapshotRepository>
-    <id>snapshots</id>
-    <name>snapshots</name>
-    <url>http://localhost:8082/repository/meetdevops-snap/</url>
-  </snapshotRepository>
-</distributionManagement>
+    <snapshotRepository>
+      <id>meetdevops-snap</id>
+      <url>http://localhost:8082/repository/meetdevops-snap/</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <build>
+  <plugins>
+    
+    <plugin>
+      <groupId>org.sonatype.plugins</groupId>
+      <artifactId>nexus-staging-maven-plugin</artifactId>
+      <version>1.5.1</version>
+      <executions>
+        <execution>
+          <id>default-deploy</id>
+          <phase>deploy</phase>
+          <goals>
+             <goal>deploy</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <serverId>nexus01</serverId>
+        <nexusUrl>http://localhost:8082/</nexusUrl>
+        <skipStaging>true</skipStaging>
+      </configuration>
+    </plugin>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <!--<webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>-->
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+  </plugins>
+  </build>
+    
 </project>
