@@ -16,6 +16,12 @@ else if(age<18)
 {
 System.out.println("Please verify your aadhar");
   System.out.println("Age Verified");
+  System.out.println("Age Verified");
+  System.out.println("Age Verified");
+  System.out.println("Age Verified");
+  System.out.println("Age Verified");
+  System.out.println("Age Verified");
+  System.out.println("Age Verified");
 }
 }
 
