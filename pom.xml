@@ -3,26 +3,21 @@
   <groupId>meet</groupId>
   <artifactId>meet</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-<dependencies>
+	<dependencies>
   <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
     <version>5.1</version>
-    <scope>test</scope>
+    <scope>provided</scope>
 </dependency>  
 </dependencies>  
   <packaging>war</packaging>
 
 <!-- -->
   <distributionManagement>
-	  <repository>
-    <id>sample-rel</id>
-    <name>releases</name>
-    <url>http://localhost:8082/repository/sample-rel/</url>
-  </repository>
     <snapshotRepository>
-      <id>meetdevops-snap</id>
-      <url>http://localhost:8082/repository/meetdevops-snap/</url>
+      <id>deployment</id>
+      <url>http://localhost:8082/repository/sample-rel/</url>
     </snapshotRepository>
   </distributionManagement>
   <build>
@@ -43,7 +38,7 @@
       </executions>
       <configuration>
         <serverId>nexus01</serverId>
-        <nexusUrl>http://localhost:8082/</nexusUrl>
+        <nexusUrl>http://localhost:8081/</nexusUrl>
         <skipStaging>true</skipStaging>
       </configuration>
     </plugin>
