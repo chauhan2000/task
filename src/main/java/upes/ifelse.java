@@ -7,6 +7,7 @@ void func()
 if (age >= 18)
 {
 System.out.println("You are welcome");
+  System.out.println("Verifying Your age");
 }
 else if(age<18)
 {
